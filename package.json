@@ -1,0 +1,28 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "projet de blog utilisant less-gulp-OOCSS",
+  "main": "index.html",
+  "scripts": {
+    "test": "de quoi ?"
+  },
+  "repository": {
+    "type": "git",
+    "url": "pas encore"
+  },
+  "keywords": [
+    "blog",
+    "less"
+  ],
+  "author": "sebastien",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "critical": "^0.7.2",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.4",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-less": "^3.0.5",
+    "gulp-uglify": "^1.5.3"
+  }
+}
