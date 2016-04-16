@@ -5,13 +5,14 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 //var imagemin = require('gulp-imagemin'); Créer une erreur au lancement de gulp
 var critical = require('critical').stream;
+var connect = require('gulp-connect');
 
 
 gulp.task('default',['build:dev'],function(){
 
 });
 
-gulp.task('build:dev', ['less:dev','js:dev','img:dev','watch']);
+gulp.task('build:dev', ['less:dev','js:dev','img:dev','connect','watch']);
 gulp.task('build:prod', ['less:prod','js:prod', 'img:prod']);
  //LESS
 gulp.task('less:prod', function(){
@@ -25,7 +26,16 @@ gulp.task('less:dev', function(){
   return gulp.src('assets/less/main.less')
   .pipe(concat('scripts.js'))
   .pipe(less())
-  .pipe(gulp.dest('dist/css'));
+  .pipe(gulp.dest('dist/css'))
+  .pipe(connect.reload());
+});
+
+gulp.task('connect', function() {
+  connect.server({
+    livereload: true,
+    port:80,
+    fallback: 'index-source.html'
+  });
 });
 
 gulp.task('watch',function(){
@@ -57,6 +67,7 @@ gulp.task('js:prod', function(){
 gulp.task('js:dev', function(){
   return gulp.src('assets/js/script.js')
   .pipe(gulp.dest('dist/js'))
+  .pipe(connect.reload());
 });
 
 
