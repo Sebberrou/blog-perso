@@ -1,0 +1,29 @@
+.header{
+  background-image:linear-gradient(to right, @grey-iron -10%, @grey-alabaster, @grey-iron);
+  @media @small{
+      background-image:linear-gradient(to right, @grey-iron 40%, @grey-alabaster , @grey-iron);
+
+  }
+  padding: 1rem 0;
+  margin-bottom:1rem;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+}
+.header--title{
+  font-family: Georgia;
+  padding-left: 1rem;
+}
+.header--logo{
+  display:block;
+  width:6rem;
+  margin:0 auto;
+}
+.header--infos{
+  padding-right: 1rem;
+   @media @small{
+    display:none;
+  }
+}
+
+
