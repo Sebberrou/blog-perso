@@ -23,8 +23,7 @@ gulp.task('less:prod', function(){
 });
 
 gulp.task('less:dev', function(){
-  return gulp.src('assets/less/main.less')
-  .pipe(concat('scripts.js'))
+  return gulp.src('assets/less/style.less')
   .pipe(less())
   .pipe(gulp.dest('dist/css'))
   .pipe(connect.reload());
